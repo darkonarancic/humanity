@@ -1,0 +1,7 @@
+{
+	"CONFIG": {
+		"ROOT": "http://localhost:8080/",
+		"ITEMS_URL": "items/all",
+		"ITEM_URL": "items/"
+	}
+}

@@ -1,0 +1,8 @@
+<% for(var i = 0; i < this.el.length; i++){ %>
+	<div class="panel panel-default">
+		<div class="panel-heading"><%= this.el[i].title %></div>
+		<div class="panel-body"><%= this.el[i].el %></div>
+	</div>
+<% } %>
+<a id="more-posts" class="btn btn-primary" href="<%= this.itemUrl %>">Read more posts &gt;</a>
+ 

@@ -1,0 +1,33 @@
+<% this.each(function(listEl){ %>
+	<div class="panel panel-default">
+		<div class="panel-heading"><%= listEl.attr('title') %></div>
+		<div class="panel-body">
+			<p><%= listEl.attr('shortDescription') %></p>
+			<a href="<%=  itemUrl + listEl.attr('id') %>" class="btn btn-primary">Read more &gt;</a>
+			<button type="button" class="btn btn-danger" <%= (el) -> el.data('el', listEl) %> id="btn-delete">X</button>
+		</div>
+	</div>
+<% }) %>
+
+
+<div class="panel panel-default">
+	<div class="panel-heading">Add new item!</div>
+	<div class="panel-body">
+		<div class="col-xs-12">
+			<h5>title: </h5>
+			<input type="text" id="title" class="form-control"/>
+		</div>
+		<div class="col-xs-12">
+			<h5>Short description: </h5>
+			<input type="text" id="short-description" class="form-control"/>
+		</div>
+		<div class="col-xs-12">
+			<h5>Full description: </h5>
+			<input type="text" id="full-description" class="form-control"/>
+		</div>
+		<div class="col-xs-12">
+			<br/>
+			<button type="button" class="btn btn-primary pull-right" id="btn-add">Add</button>
+		</div>
+	</div>
+</div>

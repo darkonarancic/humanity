@@ -1,14 +1,13 @@
-<% this.each(function(listEl){ %>
+{{#items}}
 	<div class="panel panel-default">
-		<div class="panel-heading"><%= listEl.attr('title') %></div>
+		<div class="panel-heading">{{title}}</div>
 		<div class="panel-body">
-			<p><%= listEl.attr('shortDescription') %></p>
-			<a href="<%=  itemUrl + listEl.attr('id') %>" class="btn btn-primary">Read more &gt;</a>
-			<button type="button" class="btn btn-danger" <%= (el) -> el.data('el', listEl) %> id="btn-delete">X</button>
+			<p>{{shortDescription}}</p>
+			<a href='{{itemUrl}}{{id}}' class="btn btn-primary">Read more &gt;</a>
+			<button type="button" class="btn btn-danger" {{data 'el'}} id="btn-delete">X</button>
 		</div>
 	</div>
-<% }) %>
-
+{{/items}}
 
 <div class="panel panel-default">
 	<div class="panel-heading">Add new item!</div>

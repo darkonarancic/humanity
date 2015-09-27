@@ -1,18 +1,29 @@
 (function(){
+
+	var itemListController = null;
+	var itemDetailsController = null;
+	var dashboard = null;
+
 	$.getJSON('scripts/config.json', function(data){
 		$.extend(window, data);
 	});
 
 	var Routing = can.Control({
 		'route': function(){
-			var Dashboard = new DashboardController('#main-content', {});
+			dashboard = new DashboardController('#main-content');
 		},
 		'items/:id route': function(data){
 			if(can.route.attr('id') === 'all'){
-				ItemList = new ItemListController('#main-content', {});
+				if(itemListController){
+					itemListController.destroy();
+				}
+				itemListController = new ItemListController('#main-content', {});
 			}
 			else {
-				ItemDetail = new ItemDetailsController('#main-content', {});
+				if(itemDetailsController){
+					itemDetailsController.destroy();
+				}
+				itemDetailsController = new ItemDetailsController('#main-content', {});
 			}
 		}
 	});
